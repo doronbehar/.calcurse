@@ -1,3 +1,5 @@
 notes/*
 apts
 todo
+.daemon.pid
+daemon.log
