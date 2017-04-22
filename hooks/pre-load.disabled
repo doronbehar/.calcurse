@@ -1,0 +1,9 @@
+#!/bin/sh
+cd $HOME/.calcurse
+[[ -d notes ]] && rm -r notes
+[[ -f apts ]] && rm apts
+[[ -f todo ]] && rm todo
+tmp=$(mktemp --directory)
+find $HOME/.local/share/calendar/ -name "*.ics" -exec calcurse -D $tmp --quiet --import {} \;
+find $tmp/ -maxdepth 1 -mindepth 1 -exec mv {} -t . \;
+rm -r $tmp
