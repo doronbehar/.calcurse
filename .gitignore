@@ -1,5 +1,6 @@
 notes/*
 apts
 todo
+caldav/sync.db
 .daemon.pid
 daemon.log
